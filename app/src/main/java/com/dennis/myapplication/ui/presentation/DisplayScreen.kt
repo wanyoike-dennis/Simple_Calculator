@@ -3,8 +3,10 @@ package com.dennis.myapplication.ui.presentation
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,7 +29,7 @@ fun DisplayScreen(){
                 bottomStart = 12.dp,
                 bottomEnd = 12.dp
                 ))
-            .size(150.dp)
+            .height(IntrinsicSize.Max)
     ) {
         CalculationSubScreen()
         CalculationAnswerSubScreen()

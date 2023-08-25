@@ -2,6 +2,7 @@ package com.dennis.myapplication.ui.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,9 +25,10 @@ import androidx.compose.ui.unit.dp
 fun ButtonScreen(){
 
 Column(
+    modifier= Modifier.fillMaxWidth()
+        .height(IntrinsicSize.Max),
     horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.SpaceEvenly,
-    modifier = Modifier.padding(8.dp)
 ) {
     Row(){
         ButtonRow(name = "AC")
