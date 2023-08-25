@@ -25,11 +25,11 @@ fun DisplayScreen(){
     Column(
         modifier = Modifier.fillMaxWidth()
             .background(
-                Color.Black,RoundedCornerShape(
+                Color.DarkGray,RoundedCornerShape(
                 bottomStart = 12.dp,
                 bottomEnd = 12.dp
                 ))
-            .height(IntrinsicSize.Max)
+            .height(300.dp)
     ) {
         CalculationSubScreen()
         CalculationAnswerSubScreen()
