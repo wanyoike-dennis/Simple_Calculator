@@ -77,7 +77,9 @@ Column(
         ButtonRow(name = "+")
     }
     Spacer(modifier = Modifier.height(4.dp))
-    Row(){
+    Row(verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        modifier= Modifier.fillMaxWidth()){
         ButtonRow(name = "0")
         ButtonRow(name = ".")
         ButtonRow(name = "del")
