@@ -4,8 +4,12 @@ package com.dennis.myapplication.domain
 class Calculations{
 
     // Addition
-    fun sum(){
-
+    fun Iterable<Int>.sum() : Int{
+        var sum : Int = 0
+        for (element in this){
+            sum += element
+        }
+        return sum
     }
 
     //Subtraction
