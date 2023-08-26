@@ -86,12 +86,14 @@ Column(
 @Composable
 fun ButtonRow(
     name:String,
+    modifier: Modifier,
+    onClick : () -> Unit
 ){
 
     Button(
         modifier = Modifier.size(90.dp),
         onClick = {
-
+            onClick
         }) {
         Text(text = name)
     }
