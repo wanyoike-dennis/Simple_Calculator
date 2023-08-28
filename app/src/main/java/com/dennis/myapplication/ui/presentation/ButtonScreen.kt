@@ -1,5 +1,6 @@
 package com.dennis.myapplication.ui.presentation
 
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+
+/*
 @Composable
 fun ButtonScreen(){
 
@@ -83,6 +86,8 @@ Column(
 }
 }
 
+ */
+
 @Composable
 fun ButtonRow(
     name:String,
@@ -101,8 +106,3 @@ fun ButtonRow(
 }
 
 
-@Preview
-@Composable
-fun ButtonScreenPreview(){
-ButtonScreen()
-}

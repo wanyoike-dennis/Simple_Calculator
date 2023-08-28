@@ -28,7 +28,7 @@ fun MainScreen(
 ){
 Column(modifier = Modifier.fillMaxSize()) {
     DisplayScreen()
-    ButtonScreen()
+  //  ButtonScreen()
 }
 }
 
