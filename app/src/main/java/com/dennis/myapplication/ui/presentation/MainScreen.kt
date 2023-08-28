@@ -71,8 +71,8 @@ fun Calculator(
                ButtonRow(
                    name = "AC",
                    modifier = Modifier.background(Color.Blue)
-                   .aspectRatio(2f)
-                       .weight(2f),
+                   .aspectRatio(1f)
+                       .weight(1f),
                    onClick = {
                        onAction(CalculatorActions.Clear)
                    }
@@ -89,7 +89,7 @@ fun Calculator(
                )
 
                ButtonRow(
-                   name = "%",
+                   name = "X",
                        modifier = Modifier.background(Color.Blue)
                    .aspectRatio(1f)
                    .weight(1f),
@@ -100,16 +100,16 @@ fun Calculator(
 
            }
             Row(
-                modifier =Modifier.fillMaxSize(),
+                modifier =Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ){
                 ButtonRow(
-                    name = "9",
+                    name = "7",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
-                        onAction(CalculatorActions.Number(9))
+                        onAction(CalculatorActions.Number(7))
                     }
                 )
 
@@ -124,12 +124,12 @@ fun Calculator(
                 )
 
                 ButtonRow(
-                    name = "7",
+                    name = "9",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
-                        onAction(CalculatorActions.Number(7))
+                        onAction(CalculatorActions.Number(9))
                     }
                 )
                 ButtonRow(
@@ -151,8 +151,8 @@ fun Calculator(
                 ButtonRow(
                     name = "4",
                     modifier = Modifier.background(Color.LightGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Number(4))
                     }
@@ -179,12 +179,12 @@ fun Calculator(
                 )
 
                 ButtonRow(
-                    name = "+",
+                    name = "-",
                     modifier = Modifier.background(Color.Blue)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
-                        onAction(CalculatorActions.Operation(CalculatorOperation.Add))
+                        onAction(CalculatorActions.Operation(CalculatorOperation.Subtract))
                     }
                 )
             }
@@ -195,8 +195,8 @@ fun Calculator(
                 ButtonRow(
                     name = "1",
                     modifier = Modifier.background(Color.LightGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Number(1))
                     }
@@ -239,8 +239,8 @@ fun Calculator(
                 ButtonRow(
                     name = ".",
                     modifier = Modifier.background(Color.LightGray)
-                        .aspectRatio(2f)
-                        .weight(2f),
+                        .aspectRatio(1f)
+                        .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Decimal)
                     }

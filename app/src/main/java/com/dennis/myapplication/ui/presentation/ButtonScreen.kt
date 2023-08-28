@@ -98,7 +98,7 @@ fun ButtonRow(
     Button(
         modifier = Modifier.size(90.dp),
         onClick = {
-            onClick
+            onClick()
         }) {
         Text(text = name)
     }
