@@ -54,7 +54,7 @@ fun Calculator(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
            Text(
-               text = state.number1 + (state.operation ?: "") + state.number2,
+               text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
                textAlign = TextAlign.End,
                modifier= Modifier
                    .fillMaxWidth()
@@ -84,7 +84,7 @@ fun Calculator(
                        .aspectRatio(1f)
                        .weight(1f),
                    onClick = {
-                      // onAction(CalculatorActions.Clear)
+                       onAction(CalculatorActions.Clear)
                    }
                )
 
@@ -98,20 +98,56 @@ fun Calculator(
                    }
                )
 
-               ButtonRow(
-                   name = "/",
-                   modifier = Modifier.background(Color.Blue)
-                       .aspectRatio(1f)
-                       .weight(1f),
-                   onClick = {
-                       onAction(CalculatorActions.Operation(CalculatorOperation.Divide))
-                   }
-                   )
            }
+            Row(
+                modifier =Modifier.fillMaxSize(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ){
+                ButtonRow(
+                    name = "9",
+                    modifier = Modifier.background(Color.LightGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(9))
+                    }
+                )
+
+                ButtonRow(
+                    name = "8",
+                    modifier = Modifier.background(Color.LightGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(8))
+                    }
+                )
+
+                ButtonRow(
+                    name = "7",
+                    modifier = Modifier.background(Color.LightGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(7))
+                    }
+                )
+                ButtonRow(
+                    name = "/",
+                    modifier = Modifier.background(Color.Blue)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Operation(CalculatorOperation.Divide))
+                    }
+                )
+
+            }
             Row(
                 modifier= Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
+
                 ButtonRow(
                     name = "4",
                     modifier = Modifier.background(Color.LightGray)
