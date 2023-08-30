@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.dennis.myapplication.ui.presentation.Calculator
-import com.dennis.myapplication.ui.presentation.MainScreen
 import com.dennis.myapplication.ui.theme.MyApplicationTheme
 import com.dennis.myapplication.viewModel.CalculatorViewModel
 
@@ -36,7 +35,6 @@ class MainActivity : ComponentActivity() {
                         onAction =viewModel::onAction,
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(16.dp)
                         )
                 }
             }

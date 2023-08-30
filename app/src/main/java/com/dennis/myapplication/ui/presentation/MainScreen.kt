@@ -14,29 +14,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dennis.myapplication.CalculatorActions
-import com.dennis.myapplication.CalculatorOperation
+import com.dennis.myapplication.domain.CalculatorActions
+import com.dennis.myapplication.domain.CalculatorOperation
 import com.dennis.myapplication.CalculatorState
-
-@Composable
-fun MainScreen(
-
-){
-Column(modifier = Modifier.fillMaxSize()) {
-    DisplayScreen()
-  //  ButtonScreen()
-}
-}
-
-@Preview(showBackground = true)
-@Composable
-fun MainScreenPreview(){
-   // MainScreen()
-}
+import com.dennis.myapplication.ui.theme.Pink80
 
 @Composable
 fun Calculator(
@@ -46,6 +31,9 @@ fun Calculator(
 ){
     Box (
         modifier = Modifier
+            .fillMaxSize()
+            .background(Color.DarkGray)
+            .padding(16.dp)
     ){
         Column(
             modifier= Modifier
@@ -59,6 +47,7 @@ fun Calculator(
                modifier= Modifier
                    .fillMaxWidth()
                    .padding(vertical = 32.dp),
+               fontWeight = FontWeight.Light,
                fontSize = 80.sp,
                color = Color.White,
                maxLines = 2
@@ -68,19 +57,19 @@ fun Calculator(
                modifier= Modifier.fillMaxWidth(),
                horizontalArrangement = Arrangement.spacedBy(8.dp)
            ) {
-               ButtonRow(
+               SingleButton(
                    name = "AC",
-                   modifier = Modifier.background(Color.Blue)
-                   .aspectRatio(1f)
-                       .weight(1f),
+                   modifier = Modifier.background(Color.LightGray)
+                   .aspectRatio(2f)
+                       .weight(2f),
                    onClick = {
                        onAction(CalculatorActions.Clear)
                    }
                )
 
-               ButtonRow(
+               SingleButton(
                    name = "Del",
-                   modifier = Modifier.background(Color.Blue)
+                   modifier = Modifier.background(Color.LightGray)
                        .aspectRatio(1f)
                        .weight(1f),
                    onClick = {
@@ -88,9 +77,9 @@ fun Calculator(
                    }
                )
 
-               ButtonRow(
+               SingleButton(
                    name = "X",
-                       modifier = Modifier.background(Color.Blue)
+                       modifier = Modifier.background(Pink80)
                    .aspectRatio(1f)
                    .weight(1f),
                    onClick = {
@@ -103,7 +92,7 @@ fun Calculator(
                 modifier =Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ){
-                ButtonRow(
+                SingleButton(
                     name = "7",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -113,7 +102,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "8",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -123,7 +112,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "9",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -132,9 +121,9 @@ fun Calculator(
                         onAction(CalculatorActions.Number(9))
                     }
                 )
-                ButtonRow(
+                SingleButton(
                     name = "/",
-                    modifier = Modifier.background(Color.Blue)
+                    modifier = Modifier.background(Pink80)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -148,7 +137,7 @@ fun Calculator(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
 
-                ButtonRow(
+                SingleButton(
                     name = "4",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -158,7 +147,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "5",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -168,7 +157,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "6",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -178,9 +167,9 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "-",
-                    modifier = Modifier.background(Color.Blue)
+                    modifier = Modifier.background(Pink80)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -192,7 +181,7 @@ fun Calculator(
                 modifier= Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                ButtonRow(
+                SingleButton(
                     name = "1",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -202,7 +191,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "2",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -212,7 +201,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "3",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -222,9 +211,9 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "+",
-                    modifier = Modifier.background(Color.Blue)
+                    modifier = Modifier.background(Pink80)
                         .aspectRatio(1f)
                         .weight(1f),
                     onClick = {
@@ -236,7 +225,7 @@ fun Calculator(
                 modifier= Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                ButtonRow(
+                SingleButton(
                     name = ".",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -246,7 +235,7 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "0",
                     modifier = Modifier.background(Color.LightGray)
                         .aspectRatio(1f)
@@ -256,11 +245,11 @@ fun Calculator(
                     }
                 )
 
-                ButtonRow(
+                SingleButton(
                     name = "=",
                     modifier = Modifier.background(Color.LightGray)
-                        .aspectRatio(1f)
-                        .weight(1f),
+                        .aspectRatio(2f)
+                        .weight(2f),
                     onClick = {
                         onAction(CalculatorActions.Calculate)
                     }

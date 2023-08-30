@@ -1,4 +1,4 @@
-package com.dennis.myapplication
+package com.dennis.myapplication.domain
 
 sealed class CalculatorOperation(val symbol:String){
     object Add: CalculatorOperation("+")
